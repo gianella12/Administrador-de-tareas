@@ -1,0 +1,51 @@
+.temaOscuro{
+    background: rgb(65, 61, 61);
+  
+}
+
+.temaOscuro #manejadorDeTareas{
+    background: rgb(160, 154, 154);
+}
+
+
+#contenedorFormulario{
+    display: grid;
+    justify-content: center;
+}
+
+#manejadorDeTareas{
+   background-color: rgb(184, 195, 255);
+   width: 450px;
+   height: 350px;
+   overflow: scroll;
+}
+
+#entradaTarea{
+    border: none;
+    margin-left: 2%;
+    width: 70%;
+    padding: 5px;
+}
+
+#listaTareas{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    
+}
+
+.li{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(149, 149, 228, 0.445);
+    margin-top: 3%;
+    padding: 2%;
+    border: 1px solid rgb(15, 15, 78) ;
+    
+}
+
+ .btnDelete, .btnEdit{
+    color: blue;
+    padding: 4px;
+}
