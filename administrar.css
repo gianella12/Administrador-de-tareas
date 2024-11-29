@@ -66,3 +66,7 @@
     padding: 4px;
     cursor: pointer;
 }
+.tareaCompletada{
+    background-color: rgb(158, 211, 189);
+    cursor: pointer;
+}
