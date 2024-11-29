@@ -64,4 +64,5 @@
  .btnDelete, .btnEdit{
     color: blue;
     padding: 4px;
+    cursor: pointer;
 }
