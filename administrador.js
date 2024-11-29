@@ -39,7 +39,7 @@ function crearElementosTarea(textoTarea) {
 
     const div = document.createElement("DIV");
 
-    div.append(creatarBoton(" Delete", "btnDelete"), creatarBoton(" Edit", "btnEdit"));
+    div.append(creatarBoton(" Delete", "btnDelete"), creatarBoton(" Edit", "btnEdit"), creatarBoton(" ✔ " ,"btnTareaHecha"));
     nuevoLi.append(div)
     listaTareas.insertAdjacentElement("afterbegin",nuevoLi);
 
@@ -61,6 +61,9 @@ listaTareas.addEventListener("click", (event) => {
     } else if (event.target.classList.contains("btnEdit")) {
         const tarea = event.target.closest("li");
         editarTarea(tarea)
+    } else if (event.target.classList.contains("btnTareaHecha")) {
+        const tarea = event.target.closest("li");
+        tareaHecha(tarea);
     }
 })
 
@@ -79,6 +82,13 @@ function editarTarea(tarea) {
         actualizarLocalStorage()
     }
 };
+
+function tareaHecha(tarea){
+    if(confirm("La tarea esta hecha?")){
+        tarea.classList.add("tareaCompletada");
+        actualizarLocalStorage();
+    }
+}
 
 function alamcenarTareasEnLocalStorage(tarea) {
     const tareas = JSON.parse(localStorage.getItem("tareas") || "[]");
