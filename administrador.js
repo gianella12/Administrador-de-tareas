@@ -84,7 +84,11 @@ function editarTarea(tarea) {
 };
 
 function tareaHecha(tarea){
-    if(confirm("La tarea esta hecha?")){
+    if(confirm("La tarea esta hecha?")) {
+        const botones = tarea.querySelector("div")
+        if (botones && botones.children[1]) {
+            botones.children[1].remove()
+        }
         tarea.classList.add("tareaCompletada");
         actualizarLocalStorage();
     }
