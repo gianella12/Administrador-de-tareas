@@ -83,15 +83,22 @@ function editarTarea(tarea) {
     }
 };
 
-function tareaHecha(tarea){
-    if(confirm("La tarea esta hecha?")) {
-        const botones = tarea.querySelector("div")
+function tareaHecha(tarea) {
+    const botones = tarea.querySelector("div");
+
+    if (tarea.classList.toggle("tareaCompletada")) {
         if (botones && botones.children[1]) {
-            botones.children[1].remove()
+            botones.children[1].remove();
         }
-        tarea.classList.add("tareaCompletada");
-        actualizarLocalStorage();
+    } else {
+        
+        if (botones) {
+            const botonEdit = creatarBoton(" Edit", "btnEdit");
+            botones.insertBefore(botonEdit, botones.children[1] || null);
+        }
     }
+
+    actualizarLocalStorage();
 }
 
 function alamcenarTareasEnLocalStorage(tarea) {
